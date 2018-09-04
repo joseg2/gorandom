@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func gorandom() {
+func Random12digits() {
 	const MAX = 999999999999
 
 	// This initializes a seed for 'rand' that will be different at every run, but predictable...
