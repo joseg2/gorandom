@@ -20,3 +20,8 @@ func Random12digits() {
 	xx := rand.Intn(MAX)
 	fmt.Println("Random integer: ", xx)
 }
+
+func RandomDigit(mynumber *int, pool int) {
+	rand.Seed(time.Now().UnixNano())
+	*mynumber = rand.Intn(pool)
+}
