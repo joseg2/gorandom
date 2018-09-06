@@ -1,7 +1,7 @@
+package gorandom
+
 //  Random numbers
 //
-
-package gorandom
 
 import (
 	"bufio"
@@ -13,16 +13,16 @@ import (
 )
 
 // Print a random 12 digit number
-func Random12digits() {
+func Random12digits() (int, error) {
 	const MAX = 999999999999
 
 	// This initializes a seed for 'rand' that will be different at every run, but predictable...
 	rand.Seed(time.Now().UnixNano())
 
 	// This returns a random integer from 1 to MAX
-	fmt.Println("__________________________________")
 	xx := rand.Intn(MAX)
 	fmt.Println("Random integer: ", xx)
+	return xx, nil
 }
 
 // From the numbers in the given pool, pseudo-random pick one and write it to &mynumber
@@ -32,7 +32,7 @@ func RandomDigit(mynumber *int, pool int) {
 }
 
 // Print a random line from the given path
-func RandomLine(path string) {
+func RandomLine(path string) (string, error) {
 	var lines []string
 	var randy int
 
@@ -53,4 +53,5 @@ func RandomLine(path string) {
 	RandomDigit(&randy, maxi)
 
 	fmt.Println(lines[randy])
+	return lines[randy], err
 }
