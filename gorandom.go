@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-// Print a random 12 digit number
+// Random12digits Print a random 12 digit number
 func Random12digits() (int, error) {
 	const MAX = 999999999999
 
@@ -25,13 +25,13 @@ func Random12digits() (int, error) {
 	return xx, nil
 }
 
-// From the numbers in the given pool, pseudo-random pick one and write it to &mynumber
+// RandomDigit From the numbers in the given pool, pseudo-random pick one and write it to &mynumber
 func RandomDigit(mynumber *int, pool int) {
 	rand.Seed(time.Now().UnixNano())
 	*mynumber = rand.Intn(pool)
 }
 
-// Print a random line from the given path
+// RandomLine Print a random line from the given path
 func RandomLine(path string) (string, error) {
 	var lines []string
 	var randy int

@@ -38,7 +38,7 @@ func TestRandom12digits(t *testing.T) {
 
 			checkme := 0
 
-			for n, _ := range circularBuffer {
+			for n := range circularBuffer {
 				circularBuffer[n], _ = Random12digits()
 				if checkme == circularBuffer[n] {
 					t.Errorf("\t%s\t Value returned should be different from previous", failed)
